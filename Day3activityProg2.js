@@ -2,17 +2,16 @@ const http =require('http');
 const port = 9090;
 
 
-a = 1;
-b = 2;
-c = a+b;
 	
 const server = http.createServer((req, res) => {
-	res.statusCode = 200; //server could process the request properly
+	
+	const a = 1;
+	const b = 2;
+	const c = a+b;
 	res.setHeader('content-Type','text/plain'); //text/plain:: server is respondingwith text data
-	res.write(c);
-	res.end();
+	res.end('The Value of c is'+c);
 });
 
 server.listen(port, () => {
-	console.log(`server running at 9090`);
+	console.log(`server running at http://localhost:${port}`);
 });
